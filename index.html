@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://dl.dropbox.com/s/hk7c6wqd8cgm8i4/officialstyles.css"
+    />
+    <link rel="stylesheet" href="" />
+    <style>
+      canvas {
+        border: 2px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <nav
+      class="navbar navbar-light blue lighten-4"
+      style="background-color: #e3f2fd"
+    >
+      <ul class="nav">
+        <li class="nav-item">
+          <a class="nav-link active" href="index.html"
+            >Basic Canvas</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="planning.html"
+            >Planning</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="canvas.html"
+            >Implementation</a
+          >
+        </li>
+      </ul>
+    </nav>
+    <div class="container">
+      <br />
+      <h1>Why is canvas important?</h1>
+      <p>first group project</p>
+      <ul>
+        <li>
+          thinking more deeply about how HTML and JS
+          interact
+        </li>
+        <li>writing classes and extending classes</li>
+        <li>
+          listeners to buttons using jQuery manipulating
+          variables
+        </li>
+        <li>
+          problem solving skills - how do I implement the
+          functionality that I want?
+        </li>
+        <li>
+          allows you to utilize different javascript
+          libraries (such as the color library pickr)
+        </li>
+      </ul>
+      <!-- Canvas Element One-->
+      <canvas
+        id="myCanvas"
+        height="500"
+        width="500"
+      ></canvas>
+      <p>Click on canvas for coordinates</p>
+      <div class="coordinateX"></div>
+      <div class="coordinateY"></div>
+      <!-- Canvas Element One End -->
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+    <script async defer>
+      /**********************************************
+       * Outline
+       * ==================================
+       * Practice drawing
+       * - Shapes
+       * - Lines
+       * - Arcs
+       * - Animations
+       ***********************************************/
+      let canvas = document.getElementById("myCanvas");
+      // The line canvas.getContext('2d') returns a drawing context for us to start drawing on it. 2d is the context type. There are currently four different types of context, though this might be updated. 2d creates a CanvasRenderingContext2D object for two-dimensional rendering.
+      let context = canvas.getContext("2d");
+      /**********************************************
+       * Getting Started
+       * ==================================
+       * 0. Get the mouse position at any instance
+       * 1. Ensure that you specify the strokeStyle
+       *    strokeStyle
+       * 2. Specify the fill style
+       *    fillStyle
+       * 3. Specify line width
+       ***********************************************/
+      let coordinateX = $(`.coordinateX`);
+      let coordinateY = $(`.coordinateY`);
+      function getMousePosition(
+        canvas,
+        elementOne,
+        elementTwo,
+        event
+      ) {
+        // provides information about the size of an element
+        let rect = canvas.getBoundingClientRect();
+        // subtract the current x coordinate from the element
+        //  event.clientX provides the horizontal coordinate
+        // rect.left
+        let x = event.clientX - rect.left;
+        // subtract the current y coordinate from the element
+        let y = event.clientY - rect.top;
+        elementOne.html("Coordinate X: " + x);
+        elementTwo.html("Coordinate Y: " + y);
+      }
+      // add the event - when a user presses down on the mouse, activate this function
+      canvas.addEventListener(
+        "mousedown",
+        function (event) {
+          getMousePosition(
+            canvas,
+            coordinateX,
+            coordinateY,
+            event
+          );
+        }
+      );
+      context.strokeStyle = "blue";
+      context.fillStyle = "blue";
+      context.lineWidth = 3;
+      //   context.lineWidth = 3;
+      /**********************************************
+       * Shapes
+       * ==================================
+       * Can be filled or outlined
+       *
+       * Rectangle:
+       * clearRect() - erases
+       * strokeRect(x, y, width, height) - outlines
+       * fillRect(x, y, width, height) - fills
+       ***********************************************/
+      function drawRectangle() {
+        context.fillRect(0, 0, 50, 50);
+      }
+      drawRectangle();
+      /**********************************************
+       * Lines, Curves and Arcs Settings
+       * ==================================
+       * lineCap = butt, round or square
+       ***********************************************/
+      context.lineCap = "square";
+      context.lineJoin = "round";
+      /**********************************************
+       * Drawing Lines, Curves and Arcs
+       * ==================================
+       * beginPath() - begin a path
+       * moveTo(x, y) - set a starting point
+       * lineTo() - endpoint (can be replaced by quadraticCurveTo(x, y, width, height) or bezierCurveTo(x, y, xa, ya, width, height))
+       * closePath()
+       * Each path you want drawn must be followed by
+       * stroke() or fill()
+       ***********************************************/
+      function drawLine(ctx) {
+        console.log("Drawing line");
+        ctx.strokeStyle = "black";
+        // begin a path
+        ctx.beginPath();
+        // move to position 50 50
+        ctx.moveTo(50, 50);
+        // create a line 250 140
+        ctx.lineTo(250, 140);
+        ctx.lineTo(255, 110);
+
+        // The stroke is the thickness of the line of the shape.
+        ctx.stroke();
+      }
+      drawLine(context);
+
+      function drawLineClosed(ctx) {
+        console.log("Drawing line");
+
+        ctx.strokeStyle = "orange";
+        // begin a path
+        ctx.beginPath();
+        // move to position
+        ctx.moveTo(253, 33);
+        // create a line
+        ctx.lineTo(271, 164);
+        // create a line
+        ctx.lineTo(291, 162);
+        // Paths can be open (e.g. a straight line) or they can be closed, to make a shape
+        ctx.closePath();
+
+        // The stroke is the thickness of the line of the shape.
+        ctx.stroke();
+      }
+      drawLineClosed(context);
+
+      // helps to make an object
+      let coordinates = {
+        start: { x: 20, y: 20 },
+        end: { x: 250, y: 100 },
+        firstPoint: { x: 230, y: 30 },
+        secondPoint: { x: 150, y: 180 },
+      };
+
+      function drawBezierCurve(ctx) {
+        console.log("Drawing line");
+        ctx.strokeStyle = "blue";
+        ctx.beginPath();
+        ctx.moveTo(
+          coordinates.start.x,
+          coordinates.start.y
+        );
+        ctx.bezierCurveTo(
+          coordinates.firstPoint.x,
+          coordinates.firstPoint.y,
+          coordinates.secondPoint.x,
+          coordinates.secondPoint.y,
+          coordinates.end.x,
+          coordinates.end.y
+        );
+        // if you close path, the ends will connect
+        // ctx.closePath();
+        ctx.stroke();
+      }
+
+      drawBezierCurve(context);
+
+      // helps to make an object
+      let sCoordinates = {
+        start: { x: 186, y: 380 },
+        end: { x: 129, y: 452 },
+        firstPoint: { x: 106, y: 398 },
+        secondPoint: { x: 310, y: 437 },
+      };
+      function drawS(ctx, cObject) {
+        ctx.strokeStyle = "purple";
+        ctx.beginPath();
+        ctx.moveTo(
+          sCoordinates.start.x,
+          sCoordinates.start.y
+        );
+        ctx.bezierCurveTo(
+          sCoordinates.firstPoint.x,
+          sCoordinates.firstPoint.y,
+          sCoordinates.secondPoint.x,
+          sCoordinates.secondPoint.y,
+          sCoordinates.end.x,
+          sCoordinates.end.y
+        );
+        ctx.stroke();
+      }
+      drawS(context, sCoordinates);
+
+      function drawQuadraticCurve(ctx) {
+        console.log("Drawing line");
+        // color
+        ctx.strokeStyle = "pink";
+        // begin path
+        ctx.beginPath();
+        // starting point
+        ctx.moveTo(20, 20);
+        // control point x and y
+        // end point x and y
+        ctx.quadraticCurveTo(44, 89, 179, 186);
+        // if you close path, the ends will connect
+        // ctx.closePath();
+        ctx.stroke();
+      }
+
+      drawQuadraticCurve(context);
+
+      let cObject = {
+        beginPoint: { x: 106, y: 372 },
+        controlPoint: { x: 30, y: 426 },
+        endPoint: { x: 103, y: 452 },
+      };
+
+      function drawC(ctx, cObject) {
+        ctx.strokeStyle = "red";
+        ctx.beginPath();
+        ctx.moveTo(
+          cObject.beginPoint.x,
+          cObject.beginPoint.y
+        );
+        ctx.quadraticCurveTo(
+          cObject.controlPoint.x,
+          cObject.controlPoint.y,
+          cObject.endPoint.x,
+          cObject.endPoint.y
+        );
+        ctx.stroke();
+      }
+      drawC(context, cObject);
+      /**********************************************
+       * Arcs
+       * ==================================
+       * arc(x, y, radius, startAngle, endAngle)
+       * x and y are the center
+       * radius is radius
+       * startAngle - 0 (0 degrees)
+       * endAngle - 2 * Math.PI (360 degrees)
+       ***********************************************/
+      function drawThisCircle(ctx) {
+        ctx.strokeStyle = "green";
+        ctx.beginPath();
+        ctx.arc(228, 232, 50, 0, 2 * Math.PI);
+        ctx.stroke();
+      }
+      drawThisCircle(context);
+
+      /**********************************************
+       * Draw Text
+       * ==================================
+       ***********************************************/
+      function drawText(ctx, text) {
+        ctx.fillStyle = "green";
+        ctx.font = "24pt Helvetica";
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+        ctx.fillText(text, 107, 234);
+      }
+      drawText(context, "yo");
+    </script>
+  </body>
+</html>

@@ -1,0 +1,14 @@
+canvas {
+  border: 1px black dotted;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+}
+#canvasContainer {
+  height: 720px;
+}
+#canvasDraft {
+  background-color: transparent;
+}
