@@ -15,7 +15,7 @@ let currentFunction;
 // keep track of whether or not the user is dragging the mouse
 let dragging = false;
 // keep track of current color stroke
-let colorStroke = "#42445A";
+let colorStroke = "#BADA55";
 // keep track of curerent color fill
 let colorFill = "#42445A";
 // keep track of width of line
@@ -26,8 +26,7 @@ let width = 3;
  * Given event, assign the mouse to the current x and y coordinate
  ***********************************************/
 function captureMouseEvent(event) {
-  this.xCoordinate = event.offsetX;
-  this.yCoordinate = event.offsetY;
+  [this.xCoordinate, this.yCoordinate] = [event.offsetX, event.offsetY]
 }
 /**********************************************
  * On mouse down...
@@ -37,7 +36,9 @@ function captureMouseEvent(event) {
  * Capture x and y coordinates
  * Apply the on mouse down method to the current function
  ***********************************************/
-$("#canvas").mousedown(function (event) {
+
+// first mouse event - Mouse Down
+$("#canvas").mousedown(event => {
   dragging = true;
   console.log("Mouse Down: when user presses mouse");
   captureMouseEvent(event);
@@ -54,7 +55,7 @@ $("#canvas").mousedown(function (event) {
  * If dragging isn't true (which means they are just hovering), apply onMouseMove function to the current function
  * Otherwise, apply the onMouseDrag method to the current function
  ***********************************************/
-$("#canvas").mousemove(function (event) {
+$("#canvas").mousemove(event => {
   //   console.log("Mouse Move: when user is moving mouse");
   captureMouseEvent(event);
 
@@ -80,7 +81,7 @@ $("#canvas").mousemove(function (event) {
  * Capture current x and y coordinates
  * Apply onMouseUp method to current function
  ***********************************************/
-$("#canvas").mouseup(function (event) {
+$("#canvas").mouseup(event => {
   dragging = false;
   console.log("Mouse Up: when user releases mouse");
   captureMouseEvent(event);
@@ -98,7 +99,7 @@ $("#canvas").mouseup(function (event) {
  * Capture x and y coordiante
  * Apply onMouseLeave method to current function
  ***********************************************/
-$("#canvas").mouseleave(function (event) {
+$("#canvas").mouseleave(event => {
   dragging = false;
   console.log(
     "Mouse Leave: when user's cursor leaves the element"
