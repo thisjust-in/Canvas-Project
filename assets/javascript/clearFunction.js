@@ -9,5 +9,11 @@ class clearFunction extends MouseMethods {
 $("#clearButton").click(function () {
     context.clearRect(0, 0, canvas.width, canvas.height)
     console.log("clear button clicked");
+
+
+    question;
     currentFunction = new clearFunction(context, contextDraft);
+
+
+    question
 });
