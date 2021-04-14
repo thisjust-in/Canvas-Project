@@ -14,10 +14,12 @@ let contextDraft = canvasDraft.getContext("2d");
 let currentFunction;
 // keep track of whether or not the user is dragging the mouse
 let dragging = false;
+// color picker value
+let colorPickerValue = document.querySelector("#color").value;
 // keep track of current color stroke
-let colorStroke = "#BADA55";
+let colorStroke = colorPickerValue;
 // keep track of curerent color fill
-let colorFill = "#42445A";
+let colorFill = colorPickerValue;
 // keep track of width of line
 let width = 3;
 /**********************************************
