@@ -5,10 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title></title>
     <meta name="description" content="" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -34,19 +31,13 @@
     >
       <ul class="nav">
         <li class="nav-item">
-          <a class="nav-link active" href="index.html"
-            >Basic Canvas</a
-          >
+          <a class="nav-link active" href="index.html">Basic Canvas</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="planning.html"
-            >Planning</a
-          >
+          <a class="nav-link" href="planning.html">Planning</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="canvas.html"
-            >Implementation</a
-          >
+          <a class="nav-link" href="canvas.html">Implementation</a>
         </li>
       </ul>
     </nav>
@@ -55,30 +46,20 @@
       <h1>Why is canvas important?</h1>
       <p>first group project</p>
       <ul>
-        <li>
-          thinking more deeply about how HTML and JS
-          interact
-        </li>
+        <li>thinking more deeply about how HTML and JS interact</li>
         <li>writing classes and extending classes</li>
+        <li>listeners to buttons using jQuery manipulating variables</li>
         <li>
-          listeners to buttons using jQuery manipulating
-          variables
+          problem solving skills - how do I implement the functionality that I
+          want?
         </li>
         <li>
-          problem solving skills - how do I implement the
-          functionality that I want?
-        </li>
-        <li>
-          allows you to utilize different javascript
-          libraries (such as the color library pickr)
+          allows you to utilize different javascript libraries (such as the
+          color library pickr)
         </li>
       </ul>
       <!-- Canvas Element One-->
-      <canvas
-        id="myCanvas"
-        height="500"
-        width="500"
-      ></canvas>
+      <canvas id="myCanvas" height="500" width="500"></canvas>
       <p>Click on canvas for coordinates</p>
       <div class="coordinateX"></div>
       <div class="coordinateY"></div>
@@ -125,12 +106,7 @@
        ***********************************************/
       let coordinateX = $(`.coordinateX`);
       let coordinateY = $(`.coordinateY`);
-      function getMousePosition(
-        canvas,
-        elementOne,
-        elementTwo,
-        event
-      ) {
+      function getMousePosition(canvas, elementOne, elementTwo, event) {
         // provides information about the size of an element
         let rect = canvas.getBoundingClientRect();
         // subtract the current x coordinate from the element
@@ -143,17 +119,9 @@
         elementTwo.html("Coordinate Y: " + y);
       }
       // add the event - when a user presses down on the mouse, activate this function
-      canvas.addEventListener(
-        "mousedown",
-        function (event) {
-          getMousePosition(
-            canvas,
-            coordinateX,
-            coordinateY,
-            event
-          );
-        }
-      );
+      canvas.addEventListener("mousedown", function (event) {
+        getMousePosition(canvas, coordinateX, coordinateY, event);
+      });
       context.strokeStyle = "blue";
       context.fillStyle = "blue";
       context.lineWidth = 3;
@@ -237,10 +205,7 @@
         console.log("Drawing line");
         ctx.strokeStyle = "blue";
         ctx.beginPath();
-        ctx.moveTo(
-          coordinates.start.x,
-          coordinates.start.y
-        );
+        ctx.moveTo(coordinates.start.x, coordinates.start.y);
         ctx.bezierCurveTo(
           coordinates.firstPoint.x,
           coordinates.firstPoint.y,
@@ -266,10 +231,7 @@
       function drawS(ctx, cObject) {
         ctx.strokeStyle = "purple";
         ctx.beginPath();
-        ctx.moveTo(
-          sCoordinates.start.x,
-          sCoordinates.start.y
-        );
+        ctx.moveTo(sCoordinates.start.x, sCoordinates.start.y);
         ctx.bezierCurveTo(
           sCoordinates.firstPoint.x,
           sCoordinates.firstPoint.y,
@@ -309,10 +271,7 @@
       function drawC(ctx, cObject) {
         ctx.strokeStyle = "red";
         ctx.beginPath();
-        ctx.moveTo(
-          cObject.beginPoint.x,
-          cObject.beginPoint.y
-        );
+        ctx.moveTo(cObject.beginPoint.x, cObject.beginPoint.y);
         ctx.quadraticCurveTo(
           cObject.controlPoint.x,
           cObject.controlPoint.y,
