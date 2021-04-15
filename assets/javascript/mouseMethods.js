@@ -22,6 +22,8 @@ let colorStroke = colorPickerValue;
 let colorFill = colorPickerValue;
 // keep track of width of line
 let width = 3;
+
+let fontSize = 16;
 /**********************************************
  * Capture Mouse Event
  * ==================================
@@ -112,6 +114,13 @@ $("#canvas").mouseleave(event => {
     event
   );
 });
+
+// on key down 
+document.addEventListener("keydown", event => {
+  currentFunction.onkeyDown(event)
+})
+
+
 
 /**********************************************
  * Mouse Methods
