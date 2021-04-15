@@ -7,13 +7,16 @@ class straightLineFunction extends MouseMethods {
     // When the user moves the mouse, what happens to the context?
     onMouseDown([xCoordinate, yCoordinate], event) {
         // styling
-        this.context.strokeStyle = document.querySelector("#color").value;
+        this.contextDraft.strokeStyle = colorPickerValue;
+        this.context.strokeStyle = colorPickerValue;
+        // line width
+        this.contextDraft.lineWidth = width;
+        this.context.lineWidth = width;
         // Inital X and Y value on mouse down
         this.startingX = xCoordinate;
         this.startingY = yCoordinate;
-
-        this.context.beginPath();
-        context.moveTo(this.startingX, this.startingY);
+        // Starting point
+        this.context.moveTo(this.startingX, this.startingY);
     }
 
     // When the user presses and moves the mouse, what happens to the context?
@@ -29,10 +32,13 @@ class straightLineFunction extends MouseMethods {
     onMouseMove([xCoordinate, yCoordinate], event) {}
     onMouseUp([xCoordinate, yCoordinate], event) {
         this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
+        this.context.beginPath();
+        this.context.moveTo(this.startingX, this.startingY);
         this.context.lineTo(xCoordinate, yCoordinate);
         this.context.stroke();
     }
     onMouseLeave([xCoordinate, yCoordinate], event) {}
+
 }
 
 

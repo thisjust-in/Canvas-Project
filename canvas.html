@@ -12,6 +12,10 @@
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
       crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
     <link rel="stylesheet" type="text/css" href="assets/css/styles.css" />
   </head>
   <body>
@@ -34,21 +38,21 @@
             id="lineButton"
             class="btn btn-outline-dark waves-effect"
           >
-            Pen
+            <i class="fas fa-pen-fancy"></i>
           </button>
           <button
             type="button"
             id="rectButton"
             class="btn btn-outline-dark waves-effect"
           >
-            Rectangle
+            <i class="fas fa-vector-square"></i>
           </button>
           <button
             type="button"
             id="clearButton"
             class="btn btn-outline-dark waves-effect"
           >
-            Clear
+            <i class="fas fa-trash-alt"></i>
           </button>
 
           <button
@@ -56,7 +60,7 @@
             id="straight-line-Button"
             class="btn btn-outline-dark waves-effect"
           >
-            Straight Line
+            <i class="fas fa-slash"></i>
           </button>
 
           <button
@@ -64,12 +68,25 @@
             id="text-Button"
             class="btn btn-outline-dark waves-effect"
           >
-            Text
+            <i class="fas fa-i-cursor"></i>
           </button>
           <div id="settings">
             <div id="color-picker">
               <input type="color" id="color" name="head" value="#BADA55" />
               <label for="head">Color</label>
+            </div>
+            <div>
+              <label for="customRange3" class="form-label">Width</label>
+              <input
+                type="range"
+                class="form-range"
+                min="5"
+                max="25"
+                id="range"
+                oninput="this.nextElementSibling.value = this.value"
+                value="5"
+              />
+              <output></output>
             </div>
           </div>
           <br />
