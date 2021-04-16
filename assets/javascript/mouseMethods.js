@@ -30,9 +30,8 @@ document.querySelector("#range").addEventListener("input", e => {
   width = document.querySelector("#range").value;
 })
 // store a snapshot from the canvas (using the canvas’s toDataURL method) to an array "cPushArray", so each time the user draw or add something to the canvas the function cPush is called.
-var cPushArray = new Array();
-var cStep = -1;
-
+let cPushArray = new Array();
+let cStep = -1;
 /**********************************************
  * Capture Mouse Event
  * ==================================
