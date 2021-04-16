@@ -8,14 +8,14 @@ class circleFunction extends MouseMethods {
 
 // When the user moves the mouse, waht happens to the context
 onMouseDown([xCoordinate, yCoordinate], event) {
-    this.context.fillStyle = colorFill;
-    this.contextDraft.fillStyle = colorFill;
-    this.context.strokeStyle = colorStroke;
-    this.contextDraft.strokeStyle = colorStroke;
-    this.context.lineWidth = width;
-    this.contextDraft.lineWidth = width;
-    this.startingX = xCoordinate;
-    this.startingY = yCoordinate;
+  this.context.fillStyle = colorPickerValue;
+  this.contextDraft.fillStyle = colorPickerValue;
+  this.context.strokeStyle = colorPickerValue;
+  this.contextDraft.strokeStyle = colorPickerValue;
+  this.context.lineWidth = width;
+  this.contextDraft.lineWidth = width;
+  this.startingX = xCoordinate;
+  this.startingY = yCoordinate;
 
   }
 
@@ -43,10 +43,10 @@ onMouseDown([xCoordinate, yCoordinate], event) {
         0,
         2 * Math.PI
       );
-    this.contextDraft.fillStyle = colorFill;
+    this.contextDraft.fillStyle = colorPickerValue;
     this.contextDraft.fill();
 
-    this.contextDraft.storkeStyle = colorStroke;
+    this.contextDraft.strokeStyle = colorPickerValue;
     this.contextDraft.lineWidth = width ;
     this.contextDraft.stroke();
     }
@@ -76,10 +76,10 @@ onMouseDown([xCoordinate, yCoordinate], event) {
         0,
         2 * Math.PI
       );
-    this.context.fillStyle = colorFill;
+    this.context.fillStyle = colorPickerValue;
     this.context.fill();
     
-    this.context.storkeStyle = colorStroke;
+    this.context.strokeStyle = colorPickerValue;
     this.context.lineWidth = width ;
     this.context.stroke();
 

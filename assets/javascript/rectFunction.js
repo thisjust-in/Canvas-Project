@@ -25,6 +25,14 @@ class RectFunction extends MouseMethods {
       xCoordinate - this.startingX,
       yCoordinate - this.startingY
     );
+    this.contextDraft.beginPath();
+    this.contextDraft.moveTo(this.startingX,this.startingY);
+    this.contextDraft.lineTo(xCoordinate,this.startingY)
+    this.contextDraft.lineTo(xCoordinate,yCoordinate)
+    this.contextDraft.lineTo(this.startingX,yCoordinate)
+    this.contextDraft.closePath();
+    this.contextDraft.stroke();
+
   }
 
   // When the user moves the mouse, what happens to the context?
@@ -43,6 +51,13 @@ class RectFunction extends MouseMethods {
       xCoordinate - this.startingX,
       yCoordinate - this.startingY
     );
+    this.context.beginPath();
+    this.context.moveTo(this.startingX,this.startingY);
+    this.context.lineTo(xCoordinate,this.startingY)
+    this.context.lineTo(xCoordinate,yCoordinate)
+    this.context.lineTo(this.startingX,yCoordinate)
+    this.context.closePath();
+    this.context.stroke();  
   }
   onMouseLeave([xCoordinate, yCoordinate], event) {}
 }
