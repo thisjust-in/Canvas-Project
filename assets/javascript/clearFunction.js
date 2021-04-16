@@ -5,7 +5,7 @@ class clearFunction extends MouseMethods {
         this.contextDraft = contextDraft;
     }
 
-  
+
 }
 
 $("#clearButton")
