@@ -6,8 +6,16 @@ class redoFunction extends MouseMethods {
     }
 }
 
-$("#redoButton").click(function () {
-    context.clearRect(0, 0, canvas.width, canvas.height);
+$("#redo-Button").click(function () {
+    function cRedo() {
+        if (cStep < cPushArray.length-1) {
+            cStep++;
+            var canvasPic = new Image();
+            canvasPic.src = cPushArray[cStep];
+            canvasPic.onload = function () { context.drawImage(canvasPic, 0, 0); }
+        }
+    }
+    cRedo();
     console.log("redo button clicked");
     currentFunction = new redoFunction(context, contextDraft);
 });
