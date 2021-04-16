@@ -5,9 +5,7 @@ class eraseFunction extends MouseMethods {
         this.contextDraft = contextDraft;
     }
 
-    onMouseDown([xCoordinate, yCoordinate], event) {
-
-    }
+    onMouseDown([xCoordinate, yCoordinate], event) {}
 
     // When the user presses and moves the mouse, Erase
     onMouseDrag([xCoordinate, yCoordinate], event) {
