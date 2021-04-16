@@ -29,14 +29,16 @@ let width = document.querySelector("#range").value;
 document.querySelector("#range").addEventListener("input", e => {
   width = document.querySelector("#range").value;
 })
-
+// store a snapshot from the canvas (using the canvas’s toDataURL method) to an array "cPushArray", so each time the user draw or add something to the canvas the function cPush is called.
+let cPushArray = new Array();
+let cStep = -1;
 /**********************************************
  * Capture Mouse Event
  * ==================================
  * Given event, assign the mouse to the current x and y coordinate
  ***********************************************/
 function captureMouseEvent(event) {
-  [this.xCoordinate, this.yCoordinate] = [event.offsetX, event.offsetY];
+  [this.xCoordinate, this.yCoordinate] = [event.offsetX, event.offsetY]
 }
 /**********************************************
  * On mouse down...
@@ -98,6 +100,7 @@ $("#canvas").mouseup(event => {
     [xCoordinate, yCoordinate],
     event
   );
+  cPush();
 });
 
 // on mouse enter
@@ -134,19 +137,14 @@ $("#canvas").mouseleave(event => {
 // on key down 
 document.addEventListener("keydown", event => {
   currentFunction.onkeyDown(event)
-});
+})
 
-// download
-
-function download() {
-  const image = canvas.toDataURL();
-  const link = document.createElement("a");
-  link.href = image;
-  link.download = "image.png"
-  link.click();
+function cPush() {
+  cStep++;
+  if (cStep < cPushArray.length) { cPushArray.length = cStep; }
+  cPushArray.push(document.getElementById('canvas').toDataURL());
 }
-// selecting button to download
-document.querySelector("#download-Button").addEventListener("click", download);
+
 
 
 /**********************************************
