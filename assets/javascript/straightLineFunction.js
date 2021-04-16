@@ -16,7 +16,7 @@ class straightLineFunction extends MouseMethods {
         this.startingX = xCoordinate;
         this.startingY = yCoordinate;
         // Starting point
-        this.context.moveTo(this.startingX, this.startingY);
+        // this.context.moveTo(this.startingX, this.startingY);
     }
 
     // When the user presses and moves the mouse, what happens to the context?

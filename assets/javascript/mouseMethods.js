@@ -16,6 +16,7 @@ let currentFunction;
 let dragging = false;
 // color picker value
 let colorPickerValue = document.querySelector("#color").value;
+
 document.querySelector("#color").addEventListener("input", e => {
   colorPickerValue = document.querySelector("#color").value;
 })

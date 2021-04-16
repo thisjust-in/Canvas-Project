@@ -70,10 +70,27 @@
           >
             <i class="fas fa-i-cursor"></i>
           </button>
+          <button
+            type="button"
+            id="erase-Button"
+            class="btn btn-outline-dark waves-effect"
+          >
+            <i class="fas fa-eraser"></i>
+          </button>
+
+          <button
+            type="button"
+            id="download-Button"
+            class="btn btn-outline-dark waves-effect mt-2 mb-2"
+          >
+            <i class="fas fa-download"></i>
+          </button>
+
+          <!-- adjustments section -->
           <div id="settings">
             <div id="color-picker">
-              <input type="color" id="color" name="head" value="#BADA55" />
               <label for="head">Color</label>
+              <input type="color" id="color" name="head" value="#BADA55" />
             </div>
             <div>
               <label for="customRange3" class="form-label">Width</label>
@@ -88,6 +105,12 @@
               />
               <output></output>
             </div>
+            <form>
+              <div class="form-group">
+                <label for="uploader">Select file</label>
+                <input type="file" class="file-uploader" id="uploader" />
+              </div>
+            </form>
           </div>
           <br />
           <hr />
@@ -132,5 +155,11 @@
 
     <!-- createText -->
     <script src="assets/javascript/createTextFunction.js"></script>
+
+    <!-- Erase -->
+    <script src="assets/javascript/eraseFunction.js"></script>
+
+    <!-- upload -->
+    <script src="assets/javascript/uploadFunction.js"></script>
   </body>
 </html>

@@ -8,11 +8,11 @@ class LineFunction extends MouseMethods {
   onMouseDown([xCoordinate, yCoordinate], event) {
     // first, apply the styling
     // stroke width
-    this.context.strokeStyle = document.querySelector("#color").value;
+    this.context.strokeStyle = colorPickerValue;
     // fill style
-    this.context.fillStyle = document.querySelector("#color").value;
+    this.context.fillStyle = colorPickerValue;
     // line width
-    this.context.lineWidth = document.querySelector("#range").value;
+    this.context.lineWidth = width;
     // line cap
     this.context.lineCap = "round"
     // when the user presses down, begin the path
