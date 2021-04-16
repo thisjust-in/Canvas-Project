@@ -7,9 +7,14 @@ class LineFunction extends MouseMethods {
   // When the user moves the mouse, what happens to the context?
   onMouseDown([xCoordinate, yCoordinate], event) {
     // first, apply the styling
-    this.context.strokeStyle = colorStroke;
-    this.context.fillStyle = colorFill;
+    // stroke width
+    this.context.strokeStyle = colorPickerValue;
+    // fill style
+    this.context.fillStyle = colorPickerValue;
+    // line width
     this.context.lineWidth = width;
+    // line cap
+    this.context.lineCap = "round"
     // when the user presses down, begin the path
     this.context.beginPath();
     // move to the coordinate

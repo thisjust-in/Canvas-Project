@@ -14,12 +14,22 @@ let contextDraft = canvasDraft.getContext("2d");
 let currentFunction;
 // keep track of whether or not the user is dragging the mouse
 let dragging = false;
+// color picker value
+let colorPickerValue = document.querySelector("#color").value;
+
+document.querySelector("#color").addEventListener("input", e => {
+  colorPickerValue = document.querySelector("#color").value;
+})
 // keep track of current color stroke
-let colorStroke = "#BADA55";
+let colorStroke = colorPickerValue;
 // keep track of curerent color fill
-let colorFill = "#42445A";
+let colorFill = colorPickerValue;
 // keep track of width of line
-let width = 3;
+let width = document.querySelector("#range").value;
+document.querySelector("#range").addEventListener("input", e => {
+  width = document.querySelector("#range").value;
+})
+
 /**********************************************
  * Capture Mouse Event
  * ==================================
@@ -65,7 +75,6 @@ $("#canvas").mousemove(event => {
       event
     );
   } else {
-    console.log("Dragging");
     currentFunction.onMouseDrag(
       [xCoordinate, yCoordinate],
       event
@@ -91,6 +100,15 @@ $("#canvas").mouseup(event => {
   );
 });
 
+// on mouse enter
+$("#canvas").mouseenter(event => {
+  dragging = false;
+  console.log(
+    "Mouse Enter: Mouse Enter"
+  );
+  captureMouseEvent(event);
+});
+
 /**********************************************
  * On mouse leave...
  * ==================================
@@ -110,6 +128,15 @@ $("#canvas").mouseleave(event => {
     event
   );
 });
+
+
+
+// on key down 
+document.addEventListener("keydown", event => {
+  currentFunction.onkeyDown(event)
+})
+
+
 
 /**********************************************
  * Mouse Methods
