@@ -3,7 +3,21 @@ class uploadFunction extends MouseMethods {
         super();
         this.context = context;
         this.contextDraft = contextDraft;
-        this.read
+        const reader = new FileReader();
+        const img = new Image();
+
+        const uploadImage = (e) => {
+            reader.onload = () => {
+                img.onload = () => {
+                    context.drawImage(img, 0, 0);
+                };
+                img.src = reader.result;
+            }
+            reader.readAsDataURL(e.target.files[0]);
+        };
+
+        const imageLoader = document.getElementById("uploader");
+        imageLoader.addEventListener("change", uploadImage);
     }
 
 }
