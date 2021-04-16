@@ -31,7 +31,8 @@ document.querySelector("#range").addEventListener("input", e => {
 })
 // store a snapshot from the canvas (using the canvas’s toDataURL method) to an array "cPushArray", so each time the user draw or add something to the canvas the function cPush is called.
 let cPushArray = new Array();
-let cStep = -1;
+ cStep = -1;
+
 /**********************************************
  * Capture Mouse Event
  * ==================================
@@ -139,21 +140,9 @@ document.addEventListener("keydown", event => {
   currentFunction.onkeyDown(event)
 })
 
-function download() {
-  const image = canvas.toDataURL();
-  const link = document.createElement("a");
-  link.href = image;
-  link.download = "image.png"
-  link.click();
-}
-// selecting button to download
-document.querySelector("#download-Button").addEventListener("click", download);
-
 function cPush() {
   cStep++;
-  if (cStep < cPushArray.length) {
-    cPushArray.length = cStep;
-  }
+  if (cStep < cPushArray.length) { cPushArray.length = cStep; }
   cPushArray.push(document.getElementById('canvas').toDataURL());
 }
 
