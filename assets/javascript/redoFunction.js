@@ -1,4 +1,4 @@
-class clearFunction extends MouseMethods {
+class redoFunction extends MouseMethods {
     constructor(context, contextDraft) {
         super();
         this.context = context;
@@ -6,8 +6,8 @@ class clearFunction extends MouseMethods {
     }
 }
 
-$("#clearButton").click(function () {
+$("#redoButton").click(function () {
     context.clearRect(0, 0, canvas.width, canvas.height);
-    console.log("clear button clicked");
-    currentFunction = new clearFunction(context, contextDraft);
+    console.log("redo button clicked");
+    currentFunction = new redoFunction(context, contextDraft);
 });
