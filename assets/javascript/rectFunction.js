@@ -6,8 +6,8 @@ class RectFunction extends MouseMethods {
   }
   // When the user moves the mouse, what happens to the context?
   onMouseDown([xCoordinate, yCoordinate], event) {
-    this.context.fillStyle = colorFill;
-    this.contextDraft.fillStyle = colorFill;
+    this.context.fillStyle = document.querySelector("#color").value;
+    this.contextDraft.fillStyle = document.querySelector("#color").value;
     this.startingX = xCoordinate;
     this.startingY = yCoordinate;
   }
