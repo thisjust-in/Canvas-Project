@@ -36,7 +36,7 @@ document.querySelector("#range").addEventListener("input", e => {
  * Given event, assign the mouse to the current x and y coordinate
  ***********************************************/
 function captureMouseEvent(event) {
-  [this.xCoordinate, this.yCoordinate] = [event.offsetX, event.offsetY]
+  [this.xCoordinate, this.yCoordinate] = [event.offsetX, event.offsetY];
 }
 /**********************************************
  * On mouse down...
@@ -134,8 +134,19 @@ $("#canvas").mouseleave(event => {
 // on key down 
 document.addEventListener("keydown", event => {
   currentFunction.onkeyDown(event)
-})
+});
 
+// download
+
+function download() {
+  const image = canvas.toDataURL();
+  const link = document.createElement("a");
+  link.href = image;
+  link.download = "image.png"
+  link.click();
+}
+// selecting button to download
+document.querySelector("#download-Button").addEventListener("click", download);
 
 
 /**********************************************
