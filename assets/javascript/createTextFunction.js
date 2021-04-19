@@ -21,7 +21,7 @@ class createTextFunction extends MouseMethods {
         this.context.fillStyle = colorPickerValue;
         this.contextDraft.font = "20pt Arial";
         this.contextDraft.fillStyle = document.querySelector("#color").value;
-        this.contextDraft.strokeRect(this.startingX, this.startingY, 200, 50);
+        // this.contextDraft.strokeRect(this.startingX, this.startingY, 200, 50);
         this.context.textBaseline = "top";
         this.contextDraft.textBaseline = "top";
     }
@@ -41,7 +41,7 @@ class createTextFunction extends MouseMethods {
             this.textArr.pop();
             // clears out context draft 
             this.contextDraft.clearRect(0, 0, canvas.width, canvas.height);
-            this.contextDraft.strokeRect(this.startingX - 10, this.startingY, 200, 50);
+            // this.contextDraft.strokeRect(this.startingX - 10, this.startingY, 200, 50);
             // then print out array again
             this.contextDraft.fillText(this.textArr.join(""), this.startingX, this.startingY);
         } else {
