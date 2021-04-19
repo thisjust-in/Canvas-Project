@@ -9,7 +9,7 @@ class RectFunction extends MouseMethods {
     this.context.fillStyle = document.querySelector("#color").value;
     this.contextDraft.fillStyle = document.querySelector("#color").value;
     this.context.strokeStyle = colorPickerValue;
-    this.contextDraft.strokeStyle = colorPickerValue;  
+    this.contextDraft.strokeStyle = colorPickerValue;
     this.startingX = xCoordinate;
     this.startingY = yCoordinate;
   }
@@ -27,8 +27,6 @@ class RectFunction extends MouseMethods {
       xCoordinate - this.startingX,
       yCoordinate - this.startingY
     );
-
-
   }
 
   // When the user moves the mouse, what happens to the context?
@@ -47,7 +45,6 @@ class RectFunction extends MouseMethods {
       xCoordinate - this.startingX,
       yCoordinate - this.startingY
     );
-
   }
   onMouseLeave([xCoordinate, yCoordinate], event) {}
 }
