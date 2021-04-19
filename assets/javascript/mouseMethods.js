@@ -24,6 +24,11 @@ document.querySelector("#color").addEventListener("input", e => {
 let colorStroke = colorPickerValue;
 // keep track of curerent color fill
 let colorFill = colorPickerValue;
+// keep track of num value of poloygon
+let num = document.querySelector("#sides").value;
+document.querySelector("#sides").addEventListener("input", e => {
+  num = document.querySelector("#sides").value;
+})
 // keep track of width of line
 let width = document.querySelector("#range").value;
 document.querySelector("#range").addEventListener("input", e => {
