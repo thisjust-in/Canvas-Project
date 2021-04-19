@@ -106,10 +106,15 @@ $("#canvas").mouseup(event => {
 // on mouse enter
 $("#canvas").mouseenter(event => {
   dragging = false;
+  canvas.style.cursor = "default";
   console.log(
     "Mouse Enter: Mouse Enter"
   );
   captureMouseEvent(event);
+  currentFunction.onMouseEnter(
+    [xCoordinate, yCoordinate],
+    event
+  );
 });
 
 /**********************************************

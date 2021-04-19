@@ -9,10 +9,6 @@ class createTextFunction extends MouseMethods {
         this.textArr = [];
     }
 
-    onMouseEnter([xCoordinate, yCoordinate], event) {
-        console.log("Hello")
-    }
-
     onMouseDown([xCoordinate, yCoordinate], event) {
         this.startingX = xCoordinate;
         this.startingY = yCoordinate;
@@ -25,15 +21,12 @@ class createTextFunction extends MouseMethods {
         this.context.fillStyle = colorPickerValue;
         this.contextDraft.font = "20pt Arial";
         this.contextDraft.fillStyle = document.querySelector("#color").value;
-        this.contextDraft.strokeRect(this.startingX, this.startingY, 300, 50);
-        this.contextDraft.stroke = "red"
+        this.contextDraft.strokeRect(this.startingX, this.startingY, 200, 50);
         this.context.textBaseline = "top";
         this.contextDraft.textBaseline = "top";
     }
 
-    onMouseUp([xCoordinate, yCoordinate], event) {
-
-    }
+    onMouseUp([xCoordinate, yCoordinate], event) {}
 
     onkeyDown(event) {
         // push the character to textArr array
@@ -48,14 +41,14 @@ class createTextFunction extends MouseMethods {
             this.textArr.pop();
             // clears out context draft 
             this.contextDraft.clearRect(0, 0, canvas.width, canvas.height);
-            this.contextDraft.strokeRect(this.startingX - 10, this.startingY, 300, 50);
+            this.contextDraft.strokeRect(this.startingX - 10, this.startingY, 200, 50);
             // then print out array again
             this.contextDraft.fillText(this.textArr.join(""), this.startingX, this.startingY);
         } else {
 
             // clear rect 
             this.contextDraft.clearRect(0, 0, canvas.width, canvas.height);
-            this.contextDraft.strokeRect(this.startingX - 10, this.startingY, 300, 50);
+            // this.contextDraft.strokeRect(this.startingX - 10, this.startingY, 300, 50);
             // write text
             this.contextDraft.fillText(this.textArr.join(""), this.startingX, this.startingY);
         }
@@ -66,6 +59,11 @@ class createTextFunction extends MouseMethods {
         this.contextDraft.clearRect(0, 0, canvas.width, canvas.height);
         this.context.fillText(this.textArr.join(""), this.startingX, this.startingY);
     }
+
+    onMouseEnter([xCoordinate, yCoordinate], event) {
+        canvas.style.cursor = "text";
+    }
+
 
 }
 
