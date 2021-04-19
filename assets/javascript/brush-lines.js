@@ -9,7 +9,7 @@ class brushLinesFunction extends MouseMethods {
     // on mouse down
     onMouseDown([xCoordinate, yCoordinate], event) {
         this.context.lineWidth = 3;
-        this.context.fillStyle = colorPickerValue;
+        this.context.strokeStyle = colorPickerValue;
         this.context.lineJoin = this.context.lineCap = 'round';
         this.context.isDrawing = true;
         this.context.lastPoint = {
