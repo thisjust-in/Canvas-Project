@@ -86,12 +86,21 @@
           </button>
 
           <button
+          type="button"
+          id="poloygonButton"
+          class="btn btn-outline-dark waves-effect"
+        >
+        <i class="fas fa-draw-polygon"></i>
+          </button>
+
+          <button
             type="button"
             id="lineButton"
             class="btn btn-outline-dark waves-effect"
           >
             <i class="fas fa-brush"></i>
           </button>
+
           <button
             type="button"
             id="sprayButton"
@@ -183,6 +192,10 @@
               />
               <output></output>
             </div>
+            <div id="poloygon-Number">
+              <label for="head">Sides</label>
+              <input type="number" id="sides" value="5" />
+            </div>
             <form>
               <div class="form-group">
                 <label for="uploader">Select file</label>
@@ -233,6 +246,9 @@
 
     <!-- strokeCircle Function -->
     <script src="assets/javascript/strokecircleFunction.js"></script>
+
+    <!-- poloygon Function -->
+    <script src="assets/javascript/poloygonFunction.js"></script>
 
     <!-- Line Function -->
     <script src="assets/javascript/lineFunction.js"></script>
