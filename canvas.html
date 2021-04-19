@@ -33,13 +33,23 @@
           </div>
         </div>
         <div class="col-4">
+          
           <button
             type="button"
-            id="lineButton"
-            class="btn btn-outline-dark waves-effect"
+            id="triangleButton"
+            class="btn btn-outline-dark waves-effect" 
           >
-            <i class="fas fa-pen-fancy"></i>
+            <img src="https://img.icons8.com/officel/20/000000/triangle-stroked.png"/>
           </button>
+
+          <button
+            type="button"
+            id="stroketriangleButton"
+            class="btn btn-outline-dark waves-effect" 
+          >
+            <img src="https://img.icons8.com/metro/20/000000/triangle-stroked.png"/>    
+          </button>
+     
           <button
             type="button"
             id="rectButton"
@@ -47,33 +57,37 @@
           >
             <i class="fas fa-square-full"></i>
           </button>
-              <button
+
+          <button
             type="button"
             id="strokerectButton"
             class="btn btn-outline-dark waves-effect"
           >
-          <i class="far fa-square"></i>
+            <i class="far fa-square"></i>
           </button>
-          <button
-          type="button"
-          id="circleButton"
-          class="btn btn-outline-dark waves-effect"
-        >
-          <i class="fas fa-circle"></i>
-        </button>
-        <button
-        type="button"
-        id="strokecircleButton"
-        class="btn btn-outline-dark waves-effect"
-      >
-        <i class="far fa-circle"></i>
-      </button>
+          
           <button
             type="button"
-            id="clearButton"
+            id="circleButton"
             class="btn btn-outline-dark waves-effect"
           >
-            <i class="fas fa-trash-alt"></i>
+            <i class="fas fa-circle"></i>
+          </button>
+
+          <button
+            type="button"
+            id="strokecircleButton"
+            class="btn btn-outline-dark waves-effect"
+          >
+            <i class="far fa-circle"></i>
+          </button>
+
+          <button
+            type="button"
+            id="lineButton"
+            class="btn btn-outline-dark waves-effect"
+          >
+            <i class="fas fa-pen-fancy"></i>
           </button>
 
           <button
@@ -91,6 +105,7 @@
           >
             <i class="fas fa-i-cursor"></i>
           </button>
+
           <button
             type="button"
             id="erase-Button"
@@ -100,23 +115,29 @@
           </button>
 
           <button
+            type="button"
+            id="undo-Button"
+            class="btn btn-outline-dark waves-effect"
+          >
+            <i class="fas fa-undo"></i>
+          </button>
+        
+          <button
+            type="button"
+            id="redo-Button"
+            class="btn btn-outline-dark waves-effect"
+          >
+            <i class="fas fa-redo"></i>
+          </button>
+
+          <button
           type="button"
-          id="undo-Button"
+          id="clearButton"
           class="btn btn-outline-dark waves-effect"
         >
-          <i class="fas fa-undo"></i>
+          <i class="fas fa-trash-alt"></i>
         </button>
         
-        <button
-        type="button"
-        id="redo-Button"
-        class="btn btn-outline-dark waves-effect"
-      >
-        <i class="fas fa-redo"></i>
-      </button>
-
-        
-
           <button
             type="button"
             id="download-Button"
@@ -173,36 +194,39 @@
       integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
       crossorigin="anonymous"
     ></script>
+
     <!-- Mouse Methods -->
     <script src="assets/javascript/mouseMethods.js"></script>
 
-    <!-- Line Function -->
-    <script src="assets/javascript/lineFunction.js"></script>
+    <!-- Triangle Function -->
+    <script src="assets/javascript/triangleFunction.js"></script>
 
-    <!-- Circle Function -->
-    <script src="assets/javascript/circleFunction.js"></script>
-
-    <!-- strokeCircle Function -->
-    <script src="assets/javascript/strokecircleFunction.js"></script>
-    
+    <!-- strokeTriangle Function -->
+     <script src="assets/javascript/stroketTriangleFunction.js"></script>
+ 
     <!-- Rectangle Function -->
     <script src="assets/javascript/rectFunction.js"></script>
 
     <!-- strokeRectangle Function -->
     <script src="assets/javascript/strokerectFunction.js"></script>
 
-    <!-- clearFunction -->
-    <script src="assets/javascript/clearFunction.js"></script>
+    <!-- Circle Function -->
+    <script src="assets/javascript/circleFunction.js"></script>
 
+    <!-- strokeCircle Function -->
+    <script src="assets/javascript/strokecircleFunction.js"></script>
+
+    <!-- Line Function -->
+    <script src="assets/javascript/lineFunction.js"></script>
+  
     <!-- straightLineFunction -->
-    <script
-      async
-      defer
-      src="assets/javascript/straightLineFunction.js"
-    ></script>
+    <script src="assets/javascript/straightLineFunction.js"></script>
 
     <!-- createText -->
     <script src="assets/javascript/createTextFunction.js"></script>
+
+    <!-- clearFunction -->
+    <script src="assets/javascript/clearFunction.js"></script>
 
     <!-- Erase -->
     <script src="assets/javascript/eraseFunction.js"></script>
@@ -215,5 +239,6 @@
 
     <!-- upload -->
     <script src="assets/javascript/uploadFunction.js"></script>
+
   </body>
 </html>
