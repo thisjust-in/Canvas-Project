@@ -9,7 +9,7 @@ class strokerectFunction extends MouseMethods {
     this.context.fillStyle = "white";
     this.contextDraft.fillStyle = "white";
     this.context.strokeStyle = colorPickerValue;
-    this.contextDraft.strokeStyle = colorPickerValue;  
+    this.contextDraft.strokeStyle = colorPickerValue;
     this.startingX = xCoordinate;
     this.startingY = yCoordinate;
   }
@@ -22,10 +22,10 @@ class strokerectFunction extends MouseMethods {
       canvasDraft.height
     );
     this.contextDraft.beginPath();
-    this.contextDraft.moveTo(this.startingX,this.startingY);
-    this.contextDraft.lineTo(xCoordinate,this.startingY)
-    this.contextDraft.lineTo(xCoordinate,yCoordinate)
-    this.contextDraft.lineTo(this.startingX,yCoordinate)
+    this.contextDraft.moveTo(this.startingX, this.startingY);
+    this.contextDraft.lineTo(xCoordinate, this.startingY)
+    this.contextDraft.lineTo(xCoordinate, yCoordinate)
+    this.contextDraft.lineTo(this.startingX, yCoordinate)
     this.contextDraft.closePath();
     this.contextDraft.stroke();
 
@@ -42,13 +42,13 @@ class strokerectFunction extends MouseMethods {
     );
     // comment this bottom line out and show them what the draft does
     this.context.beginPath();
-    this.context.moveTo(this.startingX,this.startingY);
-    this.context.lineTo(xCoordinate,this.startingY)
-    this.context.lineTo(xCoordinate,yCoordinate)
-    this.context.lineTo(this.startingX,yCoordinate)
+    this.context.moveTo(this.startingX, this.startingY);
+    this.context.lineTo(xCoordinate, this.startingY)
+    this.context.lineTo(xCoordinate, yCoordinate)
+    this.context.lineTo(this.startingX, yCoordinate)
     this.context.closePath();
-    this.context.stroke();  
-  
+    this.context.stroke();
+
   }
   onMouseLeave([xCoordinate, yCoordinate], event) {}
 }

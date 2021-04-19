@@ -38,6 +38,7 @@ class LineFunction extends MouseMethods {
     this.context.closePath();
     this.context.stroke();
   }
+
 }
 /**********************************************
  * Apply class to button

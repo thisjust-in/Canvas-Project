@@ -21,6 +21,7 @@ class eraseFunction extends MouseMethods {
     erase(x, y) {
         this.context.clearRect(xCoordinate, yCoordinate, 50, 50);
     }
+
 }
 
 $("#erase-Button").click(() => {
