@@ -1,3 +1,7 @@
+*{
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
 canvas {
   border: 5px black solid;
   position: absolute;
@@ -15,4 +19,5 @@ canvas {
 .btn {
   width: 50px;
   height: 50px;
+  border: none;
 }
