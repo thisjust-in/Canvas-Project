@@ -36,13 +36,14 @@ onMouseDown([xCoordinate, yCoordinate], event) {
     let radius = Math.sqrt(Math.pow(xCoordinate - this.startingX,2) + Math.pow(yCoordinate - this.startingY,2));  
 
     this.contextDraft.beginPath();
-    this.contextDraft.moveTo(this.startingX + radius * Math.cos(2 * Math.PI * 0/num),this.startingY + radius * Math.sin(2 * Math.PI * 0/num));
+    this.contextDraft.moveTo(this.startingX,this.startingY - radius);
     for(var i = 1;i <= num;i++){
-      var newX = this.startingX + radius * Math.cos(2 * Math.PI * i/num);
-      var newY = this.startingY + radius * Math.sin(2 * Math.PI * i/num);
+      var newX = this.startingX - radius * Math.sin(2 * Math.PI * i/num);
+      var newY = this.startingY - radius * Math.cos(2 * Math.PI * i/num);
       this.contextDraft.lineTo(newX,newY);
     }
-    this.contextDraft.closePath();
+    this.contextDraft.lineTo(this.startingX + radius * Math.sin(2 * Math.PI * 1/num),this.startingY + radius * Math.cos(2 * Math.PI * 1/num))
+    // this.contextDraft.closePath();
     this.contextDraft.fillStyle = colorPickerValue;
     this.contextDraft.lineWidth = width ;
     this.contextDraft.fill();
@@ -67,13 +68,14 @@ onMouseDown([xCoordinate, yCoordinate], event) {
   
 
     this.context.beginPath();
-    this.contextDraft.moveTo(this.startingX + radius * Math.cos(2 * Math.PI * 0/num),this.startingY + radius * Math.sin(2 * Math.PI * 0/num));
+    this.context.moveTo(this.startingX,this.startingY - radius);
     for(var i = 1;i <= num;i++){
-      var newX = this.startingX + radius * Math.cos(2 * Math.PI/num * i);
-      var newY = this.startingY + radius * Math.sin(2 * Math.PI/num * i);
+      var newX = this.startingX - radius * Math.sin(2 * Math.PI/num * i);
+      var newY = this.startingY - radius * Math.cos(2 * Math.PI/num * i);
       this.context.lineTo(newX,newY);
     }
-    this.context.closePath();
+    this.context.lineTo(this.startingX + radius * Math.sin(2 * Math.PI * 1/num),this.startingY + radius * Math.cos(2 * Math.PI * 1/num))
+    // this.context.closePath();
     this.context.fillStyle = colorPickerValue;
     this.context.lineWidth = width ;
     this.context.fill();
