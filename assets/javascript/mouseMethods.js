@@ -29,6 +29,12 @@ let num = document.querySelector("#sides").value;
 document.querySelector("#sides").addEventListener("input", e => {
   num = document.querySelector("#sides").value;
 })
+// keep track of distance value of curve
+let spacing = document.querySelector("#curveDistance").value;
+document.querySelector("#curveDistance").addEventListener("input", e => {
+  spacing = document.querySelector("#curveDistance").value;
+})
+
 // keep track of width of line
 let width = document.querySelector("#range").value;
 document.querySelector("#range").addEventListener("input", e => {

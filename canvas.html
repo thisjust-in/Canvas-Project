@@ -38,10 +38,10 @@
             id="triangleButton"
             class="btn btn-outline-dark waves-effect"
           >
-            <img
-              src="https://img.icons8.com/officel/20/000000/triangle-stroked.png"
-            />
-          </button>
+          <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+          width="20" height="20"
+          viewBox="0 0 226 226"
+          style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,226v-226h226v226z" fill="none"></path><g fill="#343a3f"><path d="M7.7179,200.575l105.2821,-182.35375l105.2821,182.35375z"></path><path d="M113,23.87125l100.3892,173.87875h-200.7784l100.3892,-173.87875M113,12.57125l-110.175,190.82875h220.35l-110.175,-190.82875z"></path></g></g></svg>          </button>
 
           <button
             type="button"
@@ -49,7 +49,7 @@
             class="btn btn-outline-dark waves-effect"
           >
             <img
-              src="https://img.icons8.com/metro/20/000000/triangle-stroked.png"
+              src="https://img.icons8.com/metro/18/000000/triangle-stroked.png"
             />
           </button>
 
@@ -127,6 +127,14 @@
 
           <button
             type="button"
+            id="curveButton"
+            class="btn btn-outline-dark waves-effect"
+          >
+          <i class="fas fa-bezier-curve"></i>
+          </button>
+
+          <button
+            type="button"
             id="text-Button"
             class="btn btn-outline-dark waves-effect"
           >
@@ -196,11 +204,15 @@
               <label for="head">Sides</label>
               <input type="number" id="sides" value="5" />
             </div>
+            <div id="curve-Distance">
+              <label for="head">Spacing</label>
+              <input type="number" id="curveDistance" value="100" />
+            </div>
             <form>
-              <div class="form-group">
+            <div class="form-group">
                 <label for="uploader">Select file</label>
                 <input type="file" class="file-uploader" id="uploader" />
-              </div>
+            </div>
             </form>
           </div>
           <br />
@@ -261,6 +273,9 @@
 
     <!-- straightLineFunction -->
     <script src="assets/javascript/straightLineFunction.js"></script>
+
+     <!-- curveFunction -->
+     <script src="assets/javascript/curveFunction.js"></script>
 
     <!-- createText -->
     <script src="assets/javascript/createTextFunction.js"></script>
