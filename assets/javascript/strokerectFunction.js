@@ -10,6 +10,8 @@ class strokerectFunction extends MouseMethods {
     this.contextDraft.fillStyle = "white";
     this.context.strokeStyle = colorPickerValue;
     this.contextDraft.strokeStyle = colorPickerValue;
+    this.context.lineWidth = width;
+    this.contextDraft.lineWidth = width;
     this.startingX = xCoordinate;
     this.startingY = yCoordinate;
   }
